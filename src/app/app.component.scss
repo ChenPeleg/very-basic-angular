@@ -1,0 +1,53 @@
+.spinner-contianer {
+    display: inline-block;
+    position: relative;
+    width: 300px;
+    height: 300px;
+}
+
+.spinner {
+    display: block;
+    position: relative;
+    width: 14rem;
+    height: 14rem;
+
+    border-top: 10px solid rgba(black, 0.5);
+    border-right: 10px solid transparent;
+    border-radius: 50%;
+
+    animation: rotation1 0.8s linear infinite;
+}
+
+
+.precent {
+    outline: none;
+    width: 30px;
+    text-align: right;
+    border: none;
+}
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+
+
+
+input::-webkit-calendar-picker-indicator{
+    display: none;
+}
+@keyframes rotation {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
