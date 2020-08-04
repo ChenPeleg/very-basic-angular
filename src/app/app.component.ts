@@ -19,13 +19,10 @@ export class AppComponent implements OnInit {
   }
   ngOnInit() {
     const options = {
-      headers: { 'Content-Type': 'image/jpg' }, params: {}, responseType: 'arraybuffer' as 'arraybuffer'
+      headers: { 'Content-Type': 'image/jpg' }, params: {}, responseType: 'arraybuffer' as 'json'
     };
 
-
-    this.http.get(this.CORS + this.imgUrl2, options).subscribe(res => this.arrayBuffertoImage(res))
-
-
+    this.http.get<ArrayBuffer>(this.CORS + this.imgUrl2, options).subscribe(res => this.arrayBuffertoImage(res))
 
   }
 
@@ -36,7 +33,7 @@ export class AppComponent implements OnInit {
   arrayBuffertoImage(arrayBuffer: ArrayBuffer) {
     var blob = new Blob([arrayBuffer], { type: "image/jpeg" });
     var urlCreator = window.URL;
-    var imageUrl = urlCreator.createObjectURL(blob);
+    var imageUrl = window.URL.createObjectURL(blob);
     this.emptyIMG.nativeElement.src = imageUrl;
   }
 
