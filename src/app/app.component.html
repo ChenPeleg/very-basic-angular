@@ -3,9 +3,16 @@
   <h1>
     Welcome to {{ title }}!
   </h1>
-  <h5>Regulat image</h5>
-  <img src="https://images.immediate.co.uk/production/volatile/sites/4/2009/07/GettyImages-931270318-43ab672.jpg"
-    alt="fish" style="width: 100p; height: 140px;">
+  <h5>Regulat date</h5>
+  <input [type]="'time'" name="h1">
   <br>
-  <h5>Array buffer to image</h5>
-  <img src="" alt="no photo" #emptyIMG>
+  <h5>Optional date</h5>
+  <label for="Hour">Subdomain:</label>
+  <div class="hour-wrapper">
+    <input class="cancel-arrows" type="text" placeholder="00" id="hourid" size="2" maxlength="2" />
+    <input type="text" id="colens" value=":" disabled />
+    <input class="cancel-arrows" type="text" id="minuteid" value="00" size="2" maxlength="2" />
+  </div>
+  <!-- <input type="text" placeholder="00" id="minuteid" /> -->
+
+  <br>
